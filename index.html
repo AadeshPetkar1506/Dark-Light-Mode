@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .theme-icon {
+            height: 50px;
+            width: 50px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #fff;
+
+        }
+
+        .active {
+            border: 2px solid black;
+        }
+
+        .theme-dark{
+            background-color: #000;
+            color: #fff;
+        }
+
+        .theme-light{
+            background-color: #ebe5c5;
+            color:  #000;
+        }
+
+
+    </style>
+</head>
+
+<body id="body">
+    <div>
+        <img src="dark.png" class="theme-icon active" id="img-dark" onclick="darkMode()" />
+        <img src="light.png" class="theme-icon" id="img-light" onclick="lightMode()" />
+
+        <h1>This is a Dark/light mode Theme Changer</h1>
+
+        <p>
+            Cricket has been an established team sport for hundreds of years. It originated in its modern form in
+            England and is most popular in the present and former members of the Commonwealth. Cricket is the second
+            most popular sport in the world.[1] More than a hundred cricket-playing nations are recognized by the
+            International Cricket Council.[2] In the countries of South Asia, including India, Pakistan, Bangladesh and
+            Sri Lanka, cricket is the most popular sport. It is also a major sport in England and Wales, Australia, New
+            Zealand, South Africa, Zimbabwe and the English-speaking countries of the Caribbean, which are collectively
+            known in cricketing parlance as the West Indies. There are also well-established amateur club competitions
+            in countries as diverse as the Netherlands, Kenya, Nepal and Argentina, among others.
+        </p>
+    </div>
+
+    <script>
+        function darkMode() {
+            const imgdark = document.getElementById('img-dark');
+            imgdark.classList.add('active');
+
+            const imglight = document.getElementById('img-light');
+            imglight.classList.remove('active');
+
+            const bodyElement = document.getElementById('body');
+            bodyElement.className = 'theme-dark';
+        }
+
+        function lightMode() {
+            const imgdark = document.getElementById('img-dark');
+            imgdark.classList.remove('active');
+
+            const imglight = document.getElementById('img-light');
+            imglight.classList.add('active');
+
+            const bodyElement = document.getElementById('body');
+            bodyElement.className = 'theme-light';
+        }
+
+    </script>
+</body>
+
+</html>
